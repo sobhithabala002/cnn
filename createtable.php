@@ -28,11 +28,7 @@ $sql = "create table gec(
 	occup char(20) NOT NULL,
 	gender CHAR(10) NOT NULL,
 	dob DATE,
-	email VARCHAR(40) NOT NULL,
-	password VARCHAR(20) NOT NULL,
-	mob VARCHAR(10) NOT NULL,
-	branch CHAR(10) NOT NULL,
-	semester CHAR(10) NOT NULL,
+	
 	address CHAR(10) NOT NULL,
 	image char(30) NOT NULL
 
