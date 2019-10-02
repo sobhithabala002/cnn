@@ -5,7 +5,7 @@ session_start();
 
 <html>
 <head>
-<title>hello</title>
+<title>gec</title>
 <style type="text/css"> 
 image{
 width:100px;
