@@ -36,8 +36,8 @@ table {
 
 <font  color="gold">
 <?php
-//echo '<img src="plus.png" height="50" width="50">';
-
+echo '<img src="plus.png" height="50" width="50">';
+echo'<h1>good morning</h1>
 
 /* Attempt MySQL server connection. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
