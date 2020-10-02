@@ -74,12 +74,13 @@ if($result = mysqli_query($link, $sql))
 				echo "<br> ID   :" . $row['id'];
                 echo "<br>Name    :" . $row['name'];
                 echo "<br> Gender  :" . $row['gender'];
-                echo "<br>occupation    :" . $row['occup'];
+               
                 echo "<br> dob     :" . $row['dob'];
 				
 				echo"<br>Address   :" . $row['address'];
 				echo "<br> Mobile  :" . $row['mob'];
 				echo "<br> Email   :" . $row['email'];
+				echo "<br> subject   :" . $row['subject'];
 				echo "</table>";
 				 } else{
         echo "incorrect username or password";
