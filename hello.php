@@ -12,23 +12,6 @@ width:100px;
 height:100px;
 }
 
-#button {
-    background-color:gold;
-    
-    color: white;
-    padding: 8px 15px;
-    text-align: center;
-    font-size: 15px;
-    cursor: pointer;
-}
-
-.button:hover {
-    background-color:orange;
-}
-table {
-    border: 1px solid red;
-}
- 
 
 </style>	
 </head>
@@ -53,7 +36,7 @@ if($link === false){
 }
  
 // Attempt select query execution
-$sql = "SELECT * FROM gec  WHERE email='$uname'";
+$sql = "SELECT student FROM gecskp  WHERE email='$username'";
 if($result = mysqli_query($link, $sql))
 {
     if(mysqli_num_rows($result) > 0){
@@ -63,7 +46,7 @@ if($result = mysqli_query($link, $sql))
 			$p=$p."\\new\\image\\".$row['image'];
 			
 			//echo $temp;
-			echo "<img src=$p width=200px height=300px/>";
+			echo "<img src=$p width=500px height=300px/>";
 			
 			echo"<h3><i>";
 				echo "<center>";
@@ -89,7 +72,7 @@ if($result = mysqli_query($link, $sql))
 }
 ?>
 <br>
-<button  class="button" bgcolor="black" onclick="window.location.href='signin.php'">EDIT PROFILE</button>
+<button  class="button" bgcolor="black" onclick="window.location.href='signup.php'">EDIT PROFILE</button>
 </div>
 
 </body>
