@@ -4,7 +4,7 @@
 
 server with default setting (user 'root' with no password) */
 
-$link = mysqli_connect("localhost", "id4998861_root", "jithu", "id4998861_gec");
+$link = mysqli_connect("localhost", "root", "jithu", "gec");
 
  
 
@@ -25,12 +25,13 @@ $sql = "create table gec(
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 
     name CHAR(30) NOT NULL,
-	occup char(20) NOT NULL,
+	
 	gender CHAR(10) NOT NULL,
 	dob DATE,
 	
 	address CHAR(10) NOT NULL,
-	image char(30) NOT NULL
+	image char(30) NOT NULL,
+	subject char(20) NOT NULL
 
     
 
