@@ -1,43 +1,24 @@
+
+
 <?php
 session_start();
 ?>
-
 <?php
+$error="";
+if($_SERVER["REQUEST_METHOD"]=="POST") { 
+if($_POST['password']==$_POST['password1'])
+{
+$link = mysqli_connect("localhost", "root", "jithu", "book");
 
-$error=$succ=$empty="";
-if($_SERVER["REQUEST_METHOD"]=="POST") {
-$email=$_POST['email'];
-$dob=$_POST['dob'];
-$_SESSION["email"] =$email;
-
-$sql=mysqli_connect("localhost","root","jithu","book");
-if(!$sql)
-{die ("connection failed");}
-else{
-$n="select name,dob from user where email='$email'";
-$result=mysqli_query($sql,$n);
-
-	
-		$row = mysqli_fetch_array($result);
-		
-		if($row['dob']==$dob)
-		{
-			//$error="Hii ".$row['name']." you are successfully logged in!";
-		//if(isset($_POST['submit'])) {
-				 header('Location:reset.php');
-			 
-			
-			/* if(isset($_POST['update'])) {
-				 header('Location:work.php');
-			 }*/
-			
-			}
-		else{
-			
-			
-		$error= "incorrect username or dob";
-		}
-
+$update=" update user SET password='".$_POST['password']."' where email='".$_SESSION["email"]."' ";
+if(mysqli_query($link,$update))
+{
+	$error="Your password updated successfully";
+}
+}
+else
+{
+$error="passwords are not same";
 }
 }
 ?>
@@ -49,7 +30,6 @@ $result=mysqli_query($sql,$n);
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Add icon library -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box;}
@@ -101,6 +81,9 @@ body {font-family: Arial, Helvetica, sans-serif;}
     width:50% ;
 	float:right;
 }
+input:hover {
+    background-color: #F3951A;
+}
 
 
 </style>
@@ -115,20 +98,19 @@ body {font-family: Arial, Helvetica, sans-serif;}
  
 
   <div class="input-container">
-    <i class="fa fa-envelope icon"></i>
-    <input class="input-field" type="email" placeholder="Email" name="email" required>
+    <i class="fa fa-lock icon"></i>
+    <input class="input-field" type="password" placeholder="password" name="password" required>
   </div>
   
   <div class="input-container">
-    <i class="fa fa-calendar icon"></i>
+    <i class="fa fa-key icon"></i>
 	  
-    <input class="input-field" type="text" onfocus="(this.type='date')"  placeholder="Date of birth" name="dob" required>
+    <input class="input-field" type="password"  placeholder="confirm password" name="password1" required>
   </div>
   <div class="input-container">
 
   <button type="submit" class="btn">Change Password</button></div>
-  <div><?php echo '<style="color:red">'.$error.'</style>';?></div>
-  
+  <div><?php echo '<style="color:red">'.$error.'</style>';?></div></fielset>
 </form>
 
 </body>
