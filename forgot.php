@@ -61,24 +61,6 @@ body {font-family: Arial, Helvetica, sans-serif;}
     margin-bottom: 15px;
 }
 
-.icon {
-    padding: 10px;
-    background: black;
-    color: white;
-    min-width: 50px;
-    text-align: center;
-}
-
-.input-field {
-    width: 100%;
-	border: 1px solid black;
-    padding: 10px;
-    outline: none;
-}
-
-.input-field:focus {
-    border: 2px solid black;
-}
 
 /* Set a style for the submit button */
 .btn {
