@@ -22,12 +22,7 @@ height:100px;
     cursor: pointer;
 }
 
-.button:hover {
-    background-color:orange;
-}
-table {
-    border: 1px solid red;
-}
+
  
 
 </style>	
